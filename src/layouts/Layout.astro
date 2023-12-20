@@ -1,19 +1,31 @@
 ---
-import BasicLayout from "./BasicLayout.astro";
-
 interface Props {
   title: string;
-  description: string;
 }
 
-const { title, description } = Astro.props;
+const { title } = Astro.props;
 ---
 
-<BasicLayout title={title} description={description}>
-  <div
-    slot="loader"
-    class="loader bg-darkslate-700 text-neutral-50 text-3xl font-black uppercase flex justify-center items-center w-screen h-screen z-50 fixed top-0 bottom-0 right-0 left-0"
-  >
-  </div>
-  <slot />
-</BasicLayout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+
+  <body class="flex justify-center bg-[#1d1f21]">
+    <div class="max-w-[1200px] w-full border-x-2 border-x-[#242629]">
+      <slot />
+    </div>
+  </body>
+</html>

@@ -1,61 +1,54 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card/index.astro";
-import IntroCard from "../components/IntroCard.astro";
-import ContactsCard from "../components/ContactsCard.astro";
-import TimeZone from "../components/TimeZoneCard.astro";
-import AboutMe from "../components/AboutMe.astro";
-import Now from "../components/Now.astro";
+import { Icon } from "astro-icon";
 ---
 
-<script>
-  import { stagger, spring, timeline, type TimelineDefinition } from "motion";
-  import { loaderAnimation } from "../lib/constants";
-  const cards = document.querySelectorAll(".card");
-
-  const sequence = [
-    loaderAnimation,
-    [
-      cards,
-      { y: ["40%", "0%"], opacity: [0, 1] },
-      {
-        at: "-0.1",
-        duration: 0.4,
-        delay: stagger(0.3),
-        easing: spring({ velocity: 100, stiffness: 50, damping: 10 }),
-      },
-    ],
-  ];
-
-  timeline(sequence as TimelineDefinition);
-</script>
-
-<Layout
-  title="Gianmarco Cavallo - Frontend Developer"
-  description="Software developer with strong focus on the user experience animations and micro interactions"
->
-  <main
-    class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]"
+<Layout title="Daison.dev">
+  <header
+    class="flex w-full flex-col items-center justify-between gap-[30px] border-b-2 border-b-[#242629] px-[50px] py-[50px] lg:flex-row"
   >
-    <IntroCard />
-    <AboutMe />
-    <ContactsCard />
-    <TimeZone />
-    <Card
-      colSpan="md:col-span-1"
-      rowSpan="md:row-span-1"
-      title="Blog"
-      href="/blog"
-    />
-    <Now />
-    <Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
-      <p class="text-xs">
-        © 2023 · Crafted with ♥️ using <a
-          href="https://astro.build/"
-          target="_blank"
-          class="text-red-500">Astro</a
-        > by Gianmarco.
-      </p>
-    </Card>
-  </main>
+    <main class="inline-block font-FiraCode font-bold text-white">
+      <h1
+        class="w-0 animate-typing overflow-hidden whitespace-nowrap border-r-[10px] border-r-[red] px-[10px] text-[30px] sm:text-[35px] transition-colors duration-500 hover:text-green-400"
+      >
+        Daison<span class="text-[red]">.</span>dev
+      </h1>
+    </main>
+    <div class="flex gap-[50px] flex-col sm:flex-row font-FiraCode text-white">
+      <div class="flex gap-[50px] text-[18px] sm:text-[20px] ">
+        <p class="h-min border-b-[5px] border-b-[red] hover:text-green-400">
+          Home
+        </p>
+        <p class="h-min hover:text-green-400">Posts</p>
+        <p class="h-min hover:text-green-400">Projects</p>
+      </div>
+
+      <p class="hidden sm:block">|</p>
+
+      <div class="flex gap-[50px]">
+        <a href="https://github.com/daisonth" target="_blank">
+          <Icon class="h-8 text-white hover:text-green-400" name="mdi:github" />
+        </a>
+        <a href="https://twitter.com/daisonth" target="_blank">
+          <Icon class="h-8 text-white hover:text-green-400" name="x-twitter" />
+        </a>
+        <a href="mailto:contact@daiosn.dev">
+          <Icon
+            class="h-8 text-white hover:text-green-400"
+            name="mdi:email-outline"
+          />
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="h-full"></section>
 </Layout>
+
+<style>
+  *::selection,
+  *::-moz-selection {
+    background-color: #3a3a3a;
+    color: #fff;
+  }
+</style>
