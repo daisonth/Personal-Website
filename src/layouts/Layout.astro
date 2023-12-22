@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon";
+
 interface Props {
   title: string;
 }
@@ -23,9 +25,22 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
 
-  <body class="flex justify-center bg-[#1d1f21]">
-    <div class="max-w-[1200px] w-full border-x-2 border-x-[#242629]">
+  <body
+    class="flex flex-col items-center justify-center bg-[#0d0f14] bg-grid-pattern"
+  >
+    <div
+      class="mb-[20px] w-full max-w-[1200px] border-x-2 border-b-2 border-[#242629] bg-[#0d0f14] drop-shadow-2xl"
+    >
       <slot />
     </div>
+
+    <section class="flex h-fit justify-center">
+      <h2
+        class="p-x-[30px] flex h-fit items-center whitespace-nowrap py-[30px] font-FiraCode text-[20px] text-white"
+      >
+        <span>Build with ❤️ using</span>&nbsp;
+        <a href="https://astro.build/" target="_blank"><span class="flex gap-[10px] items-center"><Icon class="h-6" name="LogosAstroIcon" /> Astro</span></a>
+      </h2>
+    </section>
   </body>
 </html>

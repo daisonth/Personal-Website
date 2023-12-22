@@ -9,6 +9,7 @@ export default {
       },
       animation: {
         'typing': 'typing 1.7s steps(10, end) forwards, blink 1.5s 3s step-end infinite',
+        'blinkProfileBorder': 'profileBorder 10s infinite',
       },
       keyframes: {
         typing: {
@@ -16,10 +17,16 @@ export default {
           "100%": { width: "100%" },
         },
         blink: {
-          "0%": { 'border-color': 'rgba(255, 0, 0, 0.2)'  },
-          "50%": { 'border-color': 'red'  },
+          "0%": { 'border-color': 'rgba(255, 0, 0, 0.2)' },
+          "50%": { 'border-color': 'red' },
+        },
+        profileBorder: {
+          "50%": { 'border-color': 'red' },
         }
       },
+      backgroundImage: {
+        'grid-pattern': "url('/public/bg-grid.png')",
+      }
     },
   },
   plugins: [],
