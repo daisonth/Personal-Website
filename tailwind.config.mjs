@@ -25,7 +25,7 @@ export default {
         }
       },
       backgroundImage: {
-        'grid-pattern': "url('/public/bg-grid.png')",
+        'grid-pattern': "url('/bg-grid.png')",
       }
     },
   },
