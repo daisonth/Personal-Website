@@ -9,6 +9,7 @@ export default {
       },
       animation: {
         'typing': 'typing 1.7s steps(10, end) forwards, blink 1.5s 3s step-end infinite',
+        'typing1': 'blink 1.5s step-end infinite',
         'blinkProfileBorder': 'profileBorder 10s infinite',
       },
       keyframes: {

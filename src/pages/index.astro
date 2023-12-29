@@ -1,80 +1,34 @@
 ---
+// import Hero from "../components/hero.astro";
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon";
 ---
 
-<Layout title="Daison.dev">
-  <header
-    class="flex w-full flex-col items-center justify-between gap-[30px] border-b-2 border-b-[#242629] px-[50px] py-[50px] lg:flex-row"
-  >
-    <main class="inline-block font-FiraCode font-bold text-white">
-      <h1
-        class="h-fit w-0 animate-typing overflow-hidden
-        whitespace-nowrap border-r-[10px] border-r-[red] px-[10px] text-[30px]
-        transition-colors duration-500 hover:text-green-400 sm:text-[35px]"
-      >
-        Daison<span class="text-[red]">.</span>dev
-      </h1>
-    </main>
-    <div class="flex flex-col gap-[50px] font-FiraCode text-white sm:flex-row">
-      <div class="flex gap-[50px] text-[18px] sm:text-[20px]">
-        <p class="h-min border-b-[5px] border-b-[red] hover:text-green-400">
-          Home
+<Layout page="home" title="Daison.dev">
+  <section id="body">
+    <!-- <Hero /> -->
+    <section
+      class="flex flex-col justify-center gap-[30px] border-b-2
+      border-[#242629] px-[30px] py-[50px] font-FiraCode text-white lg:flex-row
+      lg:px-[100px] lg:py-[200px]"
+    >
+      <div class="lg:w-4/5">
+        <h2 class="text-start text-[35px] md:text-[45px]">
+          Hello World,<br /> I am Daison Thomas
+        </h2>
+        <p class="pt-[10px] text-[20px] md:text-[25px]">
+          A Full Stack Developer with a focus on creating captivating user
+          interfaces and robust backend solutions, dedicated to driving the
+          success of web projects through a comprehensive approach to
+          development.
         </p>
-        <p class="h-min hover:text-green-400">Posts</p>
-        <p class="h-min hover:text-green-400">Projects</p>
       </div>
 
-      <p class="hidden sm:block">|</p>
-
-      <div class="flex gap-[50px]">
-        <a href="https://github.com/daisonth" target="_blank">
-          <Icon class="h-8 text-white hover:text-green-400" name="mdi:github" />
-        </a>
-        <a href="https://twitter.com/daisonth" target="_blank">
-          <Icon class="h-8 text-white hover:text-green-400" name="x-twitter" />
-        </a>
-        <a href="mailto:contact@daiosn.dev">
-          <Icon
-            class="h-8 text-white hover:text-green-400"
-            name="mdi:email-outline"
-          />
-        </a>
+      <div class="order-first lg:order-last">
+        <img
+          src="/daison_dp_3-removebg.png"
+          class="aspect-[1/1] w-[200px] min-w-[100px] animate-blinkProfileBorder rounded-full border-0 border-[#242629] bg-[#0d0f14] bg-grid-pattern object-cover object-center transition-colors duration-[2s]"
+        />
       </div>
-    </div>
-  </header>
-
-  <section
-    class="flex flex-col lg:flex-row justify-center gap-[30px] border-b-2 border-[#242629] px-[30px] lg:px-[100px] py-[50px] lg:py-[200px] font-FiraCode text-white"
-  >
-    <div class="lg:w-4/5">
-      <h2 class="text-start text-[35px] md:text-[45px]">
-        Hello World,<br /> I am Daison Thomas
-      </h2>
-      <p class="text-[20px] pt-[10px] md:text-[25px]">
-        A Frontend focused Web Developer building the Frontend of Websites and
-        Web Applications that leads to the success of the overall product.
-      </p>
-    </div>
-
-    <div class="order-first lg:order-last">
-      <img
-        src="/daison_dp_3-removebg.png"
-        class="aspect-[1/1] w-[200px] min-w-[100px] rounded-full border-x-2 border-[#242629] bg-[#0d0f14] bg-grid-pattern object-cover object-center transition-colors duration-[2s] animate-blinkProfileBorder"
-      />
-    </div>
+    </section>
   </section>
-
-  <!-- <section class="h-[200px] flex justify-center"> -->
-  <!--   <h2 class="font-FiraCode text-[30px] text-white p-[30px] border-x-2 border-b-2 h-fit border-[#242629]">Recent Posts</h2> -->
-  <!-- </section> -->
-
 </Layout>
-
-<style>
-  *::selection,
-  *::-moz-selection {
-    background-color: #000;
-    color: #ff0000;
-  }
-</style>

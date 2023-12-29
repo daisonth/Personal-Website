@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon";
+
+const { page } = Astro.props;
+---
+
+<header
+  class="flex w-full flex-col items-center justify-between gap-[30px] border-b-2 border-b-[#242629] px-[50px] py-[50px] lg:flex-row"
+>
+  <main class="inline-block font-FiraCode font-bold text-white">
+    <a href="/" class={(page==="home"? "pointer-events-none" : "")} >
+      <!--   class="h-fit w-auto animate-typing overflow-hidden -->
+      <h1
+        class="h-fit w-auto animate-typing1 overflow-hidden
+              whitespace-nowrap border-r-[10px] border-r-[red] px-[10px] text-[30px]
+              transition-colors duration-500 hover:text-green-400 sm:text-[35px]"
+      >
+        Daison<span class="text-[red]">.</span>dev
+      </h1>
+    </a>
+    <!-- </button> -->
+  </main>
+  <div class="flex flex-col gap-[50px] font-FiraCode text-white sm:flex-row">
+    <div class="flex gap-[50px] text-[18px] sm:text-[20px]">
+      <a href="/" class={(page==="home"? "pointer-events-none" : "")}>
+        <p class={(page === "home"? "border-b-[5px] border-b-[red]":"") + " h-min hover:text-green-400"}>
+          Home
+        </p>
+      </a>
+      <a href="/posts" class={(page==="posts"? "pointer-events-none" : "")}>
+        <p class={(page === "posts"? "border-b-[5px] border-b-[red]":"") + " h-min hover:text-green-400"}>Posts</p>
+      </a>
+      <a href="/projects" class={(page==="projects"? "pointer-events-none" : "")}>
+        <p class={(page === "projects"? "border-b-[5px] border-b-[red]":"") + " h-min hover:text-green-400"}>Projects</p>
+      </a>
+    </div>
+
+    <p class="hidden sm:block">|</p>
+
+    <div class="flex gap-[50px]">
+      <a href="https://github.com/daisonth" target="_blank">
+        <Icon class="h-8 text-white hover:text-green-400" name="mdi:github" />
+      </a>
+      <a href="https://twitter.com/daisonth" target="_blank">
+        <Icon class="h-8 text-white hover:text-green-400" name="x-twitter" />
+      </a>
+      <a href="mailto:contact@daiosn.dev">
+        <Icon
+          class="h-8 text-white hover:text-green-400"
+          name="mdi:email-outline"
+        />
+      </a>
+    </div>
+  </div>
+</header>
